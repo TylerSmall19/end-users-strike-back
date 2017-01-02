@@ -5,4 +5,8 @@ class Question < ActiveRecord::Base
   belongs_to :author, class_name: "User"
 
   validates :title, :author, :question, presence: true
+
+  def vote_count
+    votes.where(up_vote: true).count - votes.where(up_vote: false).count
+  end
 end
