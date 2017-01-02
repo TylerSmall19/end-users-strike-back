@@ -7,11 +7,13 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-<nav>
-  <%= link_to 'Login', '/sessions/new' %>
-  <%  %>
-</nav>
-<%= yield %>
+<div class='container'>
+  <nav>
+    <%= link_to 'Login', '/sessions/new' %>
+    <%= link_to 'Home', '/' %>
+  </nav>
 
+  <%= yield %>
+</div>
 </body>
 </html>

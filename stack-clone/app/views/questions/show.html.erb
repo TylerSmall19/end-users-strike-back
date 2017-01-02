@@ -1,1 +1,3 @@
-<h3> <%= @question.title %> </h3>
+<h3> <span class='vote-count'><%= @question.vote_count %></span> <%= @question.title %> </h3>
+<h4> Answers: </h4>
+<%= render @question.answers %>
