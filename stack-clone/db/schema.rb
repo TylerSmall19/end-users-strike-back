@@ -15,7 +15,7 @@ ActiveRecord::Schema.define(version: 20170102181628) do
 
   create_table "answers", force: :cascade do |t|
     t.integer  "question_id", null: false
-    t.integer  "post_id",     null: false
+    t.integer  "author_id",   null: false
     t.text     "body",        null: false
     t.datetime "created_at",  null: false
     t.datetime "updated_at",  null: false
@@ -31,16 +31,16 @@ ActiveRecord::Schema.define(version: 20170102181628) do
 
   create_table "users", force: :cascade do |t|
     t.string   "name",            null: false
-    t.string   "hashed_password", null: false
+    t.string   "password_digest", null: false
     t.string   "username",        null: false
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
   end
 
   create_table "votes", force: :cascade do |t|
-    t.string   "votable_type", null: false
-    t.integer  "votable_id",   null: false
     t.integer  "voter_id",     null: false
+    t.integer  "votable_id"
+    t.string   "votable_type"
     t.datetime "created_at",   null: false
     t.datetime "updated_at",   null: false
   end
