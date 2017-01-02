@@ -10,6 +10,11 @@
   User.create(
     username: Faker::Internet.user_name,
     name: Faker::Name.first_name,
-    password: password
+    password: "password"
     )
 end
+
+# 35.times do
+#   u = User.all.sample
+#   u.questions.create(question: Faker::Lorem.paragraph, )
+# end
