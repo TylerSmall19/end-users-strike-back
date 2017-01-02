@@ -13,3 +13,17 @@
  *= require_tree .
  *= require_self
  */
+.vote-count {
+  color: gray;
+}
+
+.container {
+  width: 800px;
+  margin: auto;
+  padding: 15px;
+  border: dashed 1px black;
+}
+
+nav {
+  float: right;
+}
