@@ -3,11 +3,11 @@
     <%= question.vote_count %>
   </span>
   <%= link_to question.title, question %>
-  <span class='options'>
-    <% if logged_in? && owner?(question) %>
+  <% if logged_in? && owner?(question) %>
+    <span class='options'>
       <%= link_to 'edit', edit_question_path(question) %> |
       <%= link_to 'delete', question, method: :delete %>
-    <% end %>
-  </span>
+    </span>
+  <% end %>
 </p>
 <hr>
