@@ -1,2 +1,4 @@
-<%= button_to 'Ask A New Question', new_question_path, method: 'get', class: "new-question-button" %>
+<% if logged_in? %>
+  <%= button_to 'Ask A New Question', new_question_path, method: 'get', class: "new-question-button" %>
+<% end %>
 <%= render @questions %>
