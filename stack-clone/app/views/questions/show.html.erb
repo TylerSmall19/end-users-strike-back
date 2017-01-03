@@ -11,11 +11,13 @@
   <%= render 'shared/errors' %>
 <% end %>
 
-<%= form_for Answer.new do |f| %>
-  <%= f.label :answer %>
-  <%= f.text_field :body %>
+<% if logged_in? %>
+  <%= form_for Answer.new do |f| %>
+    <%= f.label :answer %>
+    <%= f.text_field :body %>
 
-  <%= f.submit 'Answer' %>
+    <%= f.submit 'Answer' %>
+  <% end %>
 <% end %>
 
 <h4> Answers: </h4>
