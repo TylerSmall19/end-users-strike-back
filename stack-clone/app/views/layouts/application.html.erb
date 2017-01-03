@@ -9,9 +9,9 @@
 <body>
 <div class='container'>
   <nav>
-    <%= link_to 'Home', '/' %> |
+    <%= link_to_unless_current('Home', root_path) %> |
     <% if logged_in? %>
-      <%= link_to current_user.name, current_user %> |
+      <%= link_to_unless_current current_user.name, current_user %> |
       <%= link_to 'Logout', logout_path, method: :delete %>
     <% else %>
       <%= link_to 'Login', '/login' %> |
