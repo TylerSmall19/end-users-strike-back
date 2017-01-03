@@ -14,7 +14,7 @@
       <%= link_to_unless_current current_user.name, current_user %> |
       <%= link_to 'Logout', logout_path, method: :delete %>
     <% else %>
-      <%= link_to_unless_current 'Login', sessions_new_path %> |
+      <%= link_to_unless_current 'Login', login_path %> |
       <%= link_to_unless_current 'Register', users_new_path %>
     <% end %>
   </nav>
