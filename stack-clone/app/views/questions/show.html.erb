@@ -7,5 +7,19 @@
 
 <p> <%= @question.question %> </p>
 
+<% if @errors %>
+  <%= render 'shared/errors' %>
+<% end %>
+
+<% if logged_in? %>
+
+  <%= form_for Answer.new do |f| %>
+    <%= f.label :answer %>
+    <%= f.text_field :body %>
+
+    <%= f.submit 'Answer' %>
+  <% end %>
+<% end %>
+
 <h4> Answers: </h4>
 <%= render @question.answers %>

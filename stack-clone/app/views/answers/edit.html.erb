@@ -1,0 +1,8 @@
+<% if @errors %>
+  <%= render 'shared/errors' %>
+<% end %>
+
+<%= form_for @answer, method: :put do |f| %>
+  <%= f.text_field :body %>
+  <%= f.submit 'Update' %>
+<% end %>
