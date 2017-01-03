@@ -13,4 +13,7 @@ Rails.application.routes.draw do
   post '/users'    => 'users#create'
 
   post '/questions/:id/answers' => 'answers#create', as: :answers
+  get '/questions/:question_id/answers/:answer_id/edit' => 'answers#edit', as: :edit_answer
+  put '/questions/quesiton_id/answers/:answer_id' => 'answers#update', as: :answer
+  delete '/questions/:question_id/answers/:answer_id' => 'answers#destroy', as: :delete_answer
 end

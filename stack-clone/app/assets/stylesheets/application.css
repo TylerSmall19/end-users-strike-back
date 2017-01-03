@@ -48,3 +48,7 @@ a:hover {
 .error-text:before, .error-text:after {
   content: '*';
 }
+
+.options {
+  float: right;
+}

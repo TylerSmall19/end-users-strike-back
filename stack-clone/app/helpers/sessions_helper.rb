@@ -15,7 +15,8 @@ module SessionsHelper
     session[:user_id] = nil
   end
 
-  def owner?(question)
-    question.author == current_user
+  def owner?(post)
+    # Questions and answers both have the "author" attribute
+    post.author == current_user
   end
 end

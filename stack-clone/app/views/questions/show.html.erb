@@ -12,6 +12,7 @@
 <% end %>
 
 <% if logged_in? %>
+
   <%= form_for Answer.new do |f| %>
     <%= f.label :answer %>
     <%= f.text_field :body %>

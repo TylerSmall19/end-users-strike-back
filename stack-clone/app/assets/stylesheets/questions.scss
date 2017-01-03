@@ -2,17 +2,13 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.question-wrapper {
+.answer-wrapper {
   border: solid 1px black;
   margin: 5px auto;
-  padding-left: 8px
+  padding: 8px
 }
 
 .new-question-button {
   width: 150px;
   color: skyblue;
-}
-
-.question-options {
-  float: right;
 }
