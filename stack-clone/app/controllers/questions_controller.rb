@@ -17,6 +17,7 @@ class QuestionsController < ApplicationController
 
   def edit
     @question = Question.find_by(id: params[:id])
+    # form_for can tell the difference between update and create form
     render 'new'
   end
 

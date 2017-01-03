@@ -7,5 +7,12 @@
 
 <p> <%= @question.question %> </p>
 
+<%= form_for Answer.new do |f| %>
+  <%= f.label :question %>
+  <%= f.text_field :question %>
+
+  <%= f.submit 'Answer' %>
+<% end %>
+
 <h4> Answers: </h4>
 <%= render @question.answers %>
