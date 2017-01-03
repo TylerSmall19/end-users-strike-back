@@ -1,8 +1,10 @@
 <div class='answer-wrapper'>
-  <span class='options'>
-    <%= link_to 'Edit', edit_answer_path(answer.question, answer) %> |
-    <%= link_to 'Delete', delete_answer_path(answer.question, answer), method: :delete %>
-  </span>
+  <% if logged_in? && owner?(answer) %>
+    <span class='options'>
+      <%= link_to 'Edit', edit_answer_path(answer.question, answer) %> |
+      <%= link_to 'Delete', delete_answer_path(answer.question, answer), method: :delete %>
+    </span>
+  <% end %>
   <p><%= answer.body %></p>
   <p>-<%= answer.author.username %></p>
 </div>
