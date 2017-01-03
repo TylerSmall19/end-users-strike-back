@@ -40,3 +40,11 @@ a:hover {
   padding: 15px;
   border: dashed 1px black;
 }
+
+.error-text {
+  color: red;
+}
+
+.error-text:before, .error-text:after {
+  content: '*';
+}

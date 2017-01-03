@@ -7,9 +7,13 @@
 
 <p> <%= @question.question %> </p>
 
+<% if @errors %>
+  <%= render 'shared/errors' %>
+<% end %>
+
 <%= form_for Answer.new do |f| %>
-  <%= f.label :question %>
-  <%= f.text_field :question %>
+  <%= f.label :answer %>
+  <%= f.text_field :body %>
 
   <%= f.submit 'Answer' %>
 <% end %>
