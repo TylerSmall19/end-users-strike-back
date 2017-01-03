@@ -1,5 +1,6 @@
 class QuestionsController < ApplicationController
   def new
+    @question = Question.new
   end
 
   def create
@@ -15,6 +16,8 @@ class QuestionsController < ApplicationController
   end
 
   def edit
+    @question = Question.find_by(id: params[:id])
+    render 'new'
   end
 
   def show
@@ -22,9 +25,28 @@ class QuestionsController < ApplicationController
   end
 
   def destroy
+    question = Question.find_by(id: params[:id])
+    if logged_in? && owner?(question)
+      question.destroy
+      redirect_to root_path
+    else
+      redirect_to root_path
+    end
   end
 
   def update
+    question = Question.find_by(id: params[:id])
+    if logged_in? && owner?(question)
+      question.assign_attributes(question_params)
+      if question.save
+        redirect_to question
+      else
+        @errors = question.errors.full_messages
+        render 'new'
+      end
+    else
+      redirect_to root_path
+    end
   end
 
   def index

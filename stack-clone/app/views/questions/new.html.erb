@@ -2,7 +2,7 @@
   <%= render partial: '/shared/errors' %>
 <% end %>
 
-<%= form_for Question.new do |f| %>
+<%= form_for @question do |f| %>
   <%= f.label :title %><br />
   <%= f.text_field :title %><br />
 
